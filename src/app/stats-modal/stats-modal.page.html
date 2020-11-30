@@ -1,0 +1,59 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Statistics</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  
+  
+    <ion-item lines="none">
+      
+      <h5>Score <ion-icon name="tennisball"></ion-icon></h5>
+      <div *ngFor="let s of stats" slot="start">
+        <p slot="start">{{s.score}}</p>
+      </div>
+      
+      <div *ngFor="let s of stats_B" slot="end">
+        <p class="score" slot="end">{{s.score_b}}</p>
+      </div>
+      
+    </ion-item>
+  
+
+  
+    
+    <ion-item lines="none">
+      <h5>Yellow Card <ion-icon name="square" color="tertiary"></ion-icon></h5>
+      <div *ngFor="let s of stats" slot="start">
+      <p slot="start">{{s.yellowCrd}}</p>
+      </div>
+      <div *ngFor="let s of stats_B" slot="end">
+        <p slot="end">{{s.yellowCrd_b}}</p>
+      </div>
+    </ion-item>
+    <ion-item lines="none">
+      <h5>Red Card <ion-icon name="square" color="danger"></ion-icon></h5>
+      <div *ngFor="let s of stats" slot="start">
+        <p slot="start">{{s.redCrd}}</p>
+      </div>
+      <div *ngFor="let s of stats_B" slot="end">
+        <p slot="start">{{s.redCrd_b}}</p>
+      </div>
+    </ion-item>
+  
+    <ion-item lines="none">
+      <h5>Offside</h5>
+      <div *ngFor="let s of stats" slot="start">
+        <p slot="start">{{s.offside}}</p>
+      </div>
+      <div *ngFor="let s of stats_B" slot="end">
+        <p slot="start">{{s.offside_b}}</p>
+      </div>
+    </ion-item>
+
+  
+  
+    
+ 
+</ion-content>

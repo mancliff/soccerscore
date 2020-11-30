@@ -1,0 +1,82 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>game</ion-title>
+    <ion-buttons slot="end" (click)="openCart()" #cart>
+      <ion-icon name="stats-chart-outline"></ion-icon>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-grid style="height:100%;">
+    <ion-row justify-content-center align-items-center style="height:100%;">
+
+      <ion-col size=6 size-sm=10 offset-sm=1 size-md=8 offset-md=2 size-lg=2 size-lg=6 offset-xl=4>
+        <div *ngFor="let r of subResults">
+          <h3>Chippa</h3>
+        <div id="header">
+          <h1>{{r.score}}</h1>
+        </div>
+
+
+        <ion-card-content class="i-c-content">
+
+          <ion-col size="2" class="ion-align-self-center">
+            <ion-button color="medium" fill="clear" (click)="increaseScore_team_A(r)">
+              <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="2" class="ion-align-self-center">
+            <ion-button color="medium" fill="clear" (click)="decreaseScore_team_(r)">
+              <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+            <ion-button  expand="block" (click)= "yellow_card_team_A(r)">Yellow Card</ion-button>
+            <ion-button color="danger" expand="block" (click)= "red_card_team_A(r)">Red Card</ion-button>
+            <ion-button  expand="block" (click)= "off_side_A(r)">Offside</ion-button>
+        </ion-card-content>
+        </div>
+        
+      </ion-col>
+
+
+      <!-- team B -->
+
+      <ion-col size=6 size-sm=10 offset-sm=1 size-md=8 offset-md=2 size-lg=2 size-lg=6 offset-xl=4>
+        <div *ngFor="let r of subResults_B">
+          <h3>Swallows</h3>
+        <div id="header">
+          <h1>{{r.score_b}}</h1>
+        </div>
+
+
+        <ion-card-content class="i-c-content">
+
+          <ion-col size="2" class="ion-align-self-center">
+            <ion-button color="medium" fill="clear" (click)="increaseScore_team_B(r)">
+              <ion-icon name="add-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+          <ion-col size="2" class="ion-align-self-center">
+            <ion-button color="medium" fill="clear" (click)="decreaseScore_team_B(r)">
+              <ion-icon name="remove-circle" slot="icon-only"></ion-icon>
+            </ion-button>
+          </ion-col>
+
+            <ion-button  expand="block" (click)= "yellow_card_team_B(r)">Yellow Card</ion-button>
+            <ion-button color="danger" expand="block" (click)= "red_card_team_B(r)">Red Card</ion-button>
+            <ion-button  expand="block" (click)= "off_side_B(r)">Offside</ion-button>
+        </ion-card-content>
+        </div>
+        
+      </ion-col>
+      <div class="button-reset" *ngFor="let r of subResults">
+        <ion-button  expand="block" (click)= "resetmatch(r)">Reset</ion-button>
+      </div>
+      
+    </ion-row>
+  </ion-grid>
+ </ion-content>
